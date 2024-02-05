@@ -33,7 +33,11 @@ export const comparePassword = (req, res, next) => {
 const sendToken = (userDatas) => {
     console.log(userDatas)
     return jwt.sign(
-        { user: { id: userDatas.id, username: userDatas.username, mail: userDatas.userEmail } },
+        {user: { 
+            id: userDatas.id, 
+            username: userDatas.username, 
+            mail: userDatas.userEmail 
+        }},
         process.env.JWT_SECRET,
         { expiresIn: "1d" }
     )
