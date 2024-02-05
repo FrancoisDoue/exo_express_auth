@@ -3,7 +3,7 @@ import { Schema, model } from "mongoose";
 const userSchema = new Schema({
     username: { type: String, required: true },
     userEmail: { type: String, required: true },
-    userPassword: { type: String, required: true}
+    userPassword: { type: String, required: true }
 }, {
     statics: {
         // bon bah s'il faut une rustine pour utiliser le pouvoir du callback...
@@ -20,7 +20,7 @@ const userSchema = new Schema({
             return this.useCB(this.create(body), cb)
         },
         getUserByMail(email, cb) {
-            return this.useCB(this.findOne({'userEmail': email}), cb)
+            return this.useCB(this.findOne({ 'userEmail': email }), cb)
         }
     }
 })

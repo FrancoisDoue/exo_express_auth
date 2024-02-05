@@ -9,9 +9,9 @@ export default {
         })
     },
     login: (req, res) => {
-        res.status(200).json({ message: 'Login OK', token : req.body.token} )
+        res.status(200).json({ message: 'Login OK', token: req.body.token })
     },
     getProfile: (req, res) => {
-        res.status(20).json({message: `Bonjour, ${req.body.payload.username} !`, datas : req.body.payload})
+        res.status(20).json({ message: `Bonjour, ${req.body.payload.username} !`, datas: req.body.payload })
     }
 }
