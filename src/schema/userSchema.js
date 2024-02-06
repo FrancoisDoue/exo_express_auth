@@ -5,6 +5,7 @@ const userSchema = new Schema({
     userEmail: { type: String, required: true },
     userPassword: { type: String, required: true }
 }, {
+    // versionKey: false, 
     statics: {
         // bon bah s'il faut une rustine pour utiliser le pouvoir du callback...
         async useCB(method, cb) {

@@ -46,7 +46,7 @@ const sendToken = (userDatas) => {
 export const isGranted = (req, res, next) => {
     try {
         const token = req.headers.authorization.split(" ")[1]
-        req.body.payload = jwt.verify(token, process.env.JWT_SECRET).user
+        req.auth = jwt.verify(token, process.env.JWT_SECRET).user
         return next()
     } catch (e) {
         res.status(401).json({ message: "You must be connected to access this route" });

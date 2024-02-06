@@ -12,6 +12,6 @@ export default {
         res.status(200).json({ message: 'Login OK', token: req.body.token })
     },
     getProfile: (req, res) => {
-        res.status(20).json({ message: `Bonjour, ${req.body.payload.username} !`, datas: req.body.payload })
+        res.status(200).json({ message: `Bonjour, ${req.auth.username} !`, datas: req.auth })
     }
 }
